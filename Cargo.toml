@@ -1,0 +1,11 @@
+[package]
+name = "plait-heroicons"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+plait = "0.7.2"
+
+[build-dependencies]
+roxmltree = "0.21.1"
+convert_case = "0.11.0"
