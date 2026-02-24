@@ -2,6 +2,14 @@
 name = "plait-heroicons"
 version = "0.1.0"
 edition = "2024"
+authors = ["Devashish Dixit <devashishdxt@gmail.com>"]
+description = "Heroicons as plait components"
+documentation = "https://docs.rs/plait-heroicons"
+repository = "https://github.com/devashishdxt/plait-heroicons"
+license = "MIT OR Apache-2.0"
+keywords = ["heroicons", "plait", "html", "components", "icons"]
+categories = ["web-programming"]
+readme = "README.md"
 
 [dependencies]
 plait = "0.7.2"
