@@ -21,10 +21,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "hescape"
-version = "0.1.0"
+name = "itoa"
+version = "1.0.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d80ad69ffd2cdb4981b63d4ed9a60ac874cf86bfac0c6a3972f66c8ffd55ee2c"
+checksum = "92ecc6618181def0457392ccd0ee51198e065e016d1d527a7ac1b6dc7c1f09d2"
 
 [[package]]
 name = "memchr"
@@ -33,25 +33,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
 
 [[package]]
-name = "percent-encoding"
-version = "2.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
-
-[[package]]
 name = "plait"
-version = "0.7.2"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eec80e5dd63079319ce471fea35ce3107346858275d699df81907fc136fd2853"
+checksum = "03dedb74afcbd251b4ffad6814c4876fb8802b37a83afb9da5138cda6dcf49fe"
 dependencies = [
- "hescape",
- "percent-encoding",
+ "itoa",
  "plait-macros",
+ "ryu",
 ]
 
 [[package]]
 name = "plait-heroicons"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "convert_case 0.11.0",
  "plait",
@@ -60,9 +54,9 @@ dependencies = [
 
 [[package]]
 name = "plait-macros"
-version = "0.6.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ee9a098cda7b5fc4608f1da22c8dfd436669da3dac4c08aefb9b01864f41591"
+checksum = "65dbd7e1abe6d236230d7235e7ccea373f7fa4c8e35ece811a0b106ebc331a72"
 dependencies = [
  "convert_case 0.10.0",
  "proc-macro2",
@@ -96,6 +90,12 @@ checksum = "f1964b10c76125c36f8afe190065a4bf9a87bf324842c05701330bba9f1cacbb"
 dependencies = [
  "memchr",
 ]
+
+[[package]]
+name = "ryu"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9774ba4a74de5f7b1c1451ed6cd5285a32eddb5cccb8cc655a4e50009e06477f"
 
 [[package]]
 name = "syn"

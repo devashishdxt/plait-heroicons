@@ -1,10 +1,10 @@
-use plait::html;
+use plait::{ToHtml, html};
 
 #[test]
 fn outline_academic_cap_has_correct_svg_attrs() {
     use plait_heroicons::outline::AcademicCap;
 
-    let rendered = html! { @AcademicCap() {} }.to_string();
+    let rendered = html! { @AcademicCap() {} }.to_html();
 
     assert!(rendered.contains(r#"xmlns="http://www.w3.org/2000/svg""#));
     assert!(rendered.contains(r#"fill="none""#));
@@ -21,7 +21,7 @@ fn outline_academic_cap_has_correct_svg_attrs() {
 fn solid_academic_cap_has_correct_svg_attrs() {
     use plait_heroicons::solid::AcademicCap;
 
-    let rendered = html! { @AcademicCap() {} }.to_string();
+    let rendered = html! { @AcademicCap() {} }.to_html();
 
     assert!(rendered.contains(r#"xmlns="http://www.w3.org/2000/svg""#));
     assert!(rendered.contains(r#"viewBox="0 0 24 24""#));
@@ -37,7 +37,7 @@ fn solid_academic_cap_has_correct_svg_attrs() {
 fn mini_has_correct_viewbox() {
     use plait_heroicons::mini::AcademicCap;
 
-    let rendered = html! { @AcademicCap() {} }.to_string();
+    let rendered = html! { @AcademicCap() {} }.to_html();
 
     assert!(rendered.contains(r#"viewBox="0 0 20 20""#));
     assert!(rendered.contains(r#"fill="currentColor""#));
@@ -47,7 +47,7 @@ fn mini_has_correct_viewbox() {
 fn micro_has_correct_viewbox() {
     use plait_heroicons::micro::AcademicCap;
 
-    let rendered = html! { @AcademicCap() {} }.to_string();
+    let rendered = html! { @AcademicCap() {} }.to_html();
 
     assert!(rendered.contains(r#"viewBox="0 0 16 16""#));
     assert!(rendered.contains(r#"fill="currentColor""#));
@@ -57,7 +57,7 @@ fn micro_has_correct_viewbox() {
 fn attrs_forwarding_works() {
     use plait_heroicons::outline::AcademicCap;
 
-    let rendered = html! { @AcademicCap(; class: "w-6 h-6 text-blue-500") {} }.to_string();
+    let rendered = html! { @AcademicCap(; class: "w-6 h-6 text-blue-500") {} }.to_html();
 
     assert!(rendered.contains(r#"class="w-6 h-6 text-blue-500""#));
     assert!(rendered.contains(r#"xmlns="http://www.w3.org/2000/svg""#));
@@ -67,7 +67,7 @@ fn attrs_forwarding_works() {
 fn micro_stop_renders_rect_element() {
     use plait_heroicons::micro::Stop;
 
-    let rendered = html! { @Stop() {} }.to_string();
+    let rendered = html! { @Stop() {} }.to_html();
 
     assert!(rendered.contains("<rect"));
     assert!(rendered.contains(r#"width="10""#));
