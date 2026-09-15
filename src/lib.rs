@@ -21,8 +21,8 @@
 //! component! {
 //!     pub fn Navbar() {
 //!         nav {
-//!             @outline::BellAlert() {}
-//!             @outline::UserCircle() {}
+//!             @outline::BellAlert(; aria_hidden: "true") {}
+//!             @outline::UserCircle(; aria_hidden: "true") {}
 //!         }
 //!     }
 //! }
@@ -37,12 +37,57 @@
 //! component! {
 //!     pub fn Controls() {
 //!         div {
-//!             @solid::PlayCircle() {}
-//!             @mini::ChevronDown() {}
+//!             @solid::PlayCircle(; aria_hidden: "true") {}
+//!             @mini::ChevronDown(; aria_hidden: "true") {}
 //!         }
 //!     }
 //! }
 //! ```
+
+//! # Plait compatibility
+//!
+//! This checkout requires Plait `0.9.0-dev.0` from the following immutable Git
+//! revision. Consumers must use the same source and revision, not registry Plait
+//! 0.8, so generated components share the construction protocol and trait identity.
+//!
+//! ```toml
+//! [dependencies]
+//! plait = { git = "https://github.com/devashishdxt/plait.git", rev = "42e3b39f1f6ddf120d908d0e9a78cab6de419734", default-features = false }
+//! ```
+//!
+//! Rebuild older component libraries with the matching Plait macro/runtime pair.
+//! Generated `@Icon(; attributes) {}` calls keep their syntax.
+//!
+//! # Attribute ownership and accessibility
+//!
+//! **Migration:** generated icons no longer automatically emit `aria-hidden="true"`
+//! or `data-slot="icon"`. Both attributes are caller-owned and forwarded to the SVG
+//! root with no wrapper. Add `aria_hidden: "true"` for decorative icons and
+//! `data_slot: "icon"` when your parent styles use that slot. Use `micro` for 16px
+//! solid drawings and `mini` for 20px solid drawings; CSS sizing does not change
+//! which drawing variant is selected.
+//!
+//! Icon-only controls need an accessible name on the control. Meaningful standalone
+//! icons need explicit semantics and a name; they must not be hidden from assistive
+//! technology. For example:
+//!
+//! ```rust
+//! use plait::{html, ToHtml};
+//! use plait_heroicons::{micro, mini};
+//!
+//! let content = html! {
+//!     button(type: "button", aria_label: "Notifications") {
+//!         @micro::BellAlert(; data_slot: "icon", aria_hidden: "true") {}
+//!     }
+//!     @mini::AcademicCap(; role: "img", aria_label: "Education") {}
+//! }.to_html();
+//! assert!(content.contains("aria-label=\"Education\""));
+//! ```
+//!
+//! The generator still owns the SVG namespace, viewBox, fill, and any source stroke
+//! attributes. Do not repeat those through extra attributes: Plait forwards rather
+//! than merges attributes. Caller classes, `data-*`, `aria-*`, and `role` reach the
+//! root; the source paths and other drawing geometry are unchanged.
 
 /// 24px outline icons.
 pub mod outline {

@@ -21,12 +21,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "itoa"
-version = "1.0.17"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "92ecc6618181def0457392ccd0ee51198e065e016d1d527a7ac1b6dc7c1f09d2"
-
-[[package]]
 name = "memchr"
 version = "2.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -34,13 +28,10 @@ checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
 
 [[package]]
 name = "plait"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03dedb74afcbd251b4ffad6814c4876fb8802b37a83afb9da5138cda6dcf49fe"
+version = "0.9.0-dev.0"
+source = "git+https://github.com/devashishdxt/plait.git?rev=42e3b39f1f6ddf120d908d0e9a78cab6de419734#42e3b39f1f6ddf120d908d0e9a78cab6de419734"
 dependencies = [
- "itoa",
  "plait-macros",
- "ryu",
 ]
 
 [[package]]
@@ -54,9 +45,8 @@ dependencies = [
 
 [[package]]
 name = "plait-macros"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "65dbd7e1abe6d236230d7235e7ccea373f7fa4c8e35ece811a0b106ebc331a72"
+version = "0.9.0-dev.0"
+source = "git+https://github.com/devashishdxt/plait.git?rev=42e3b39f1f6ddf120d908d0e9a78cab6de419734#42e3b39f1f6ddf120d908d0e9a78cab6de419734"
 dependencies = [
  "convert_case 0.10.0",
  "proc-macro2",
@@ -75,9 +65,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.44"
+version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21b2ebcf727b7760c461f091f9f0f539b77b8e87f2fd88131e7f1b433b3cece4"
+checksum = "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001"
 dependencies = [
  "proc-macro2",
 ]
@@ -90,12 +80,6 @@ checksum = "f1964b10c76125c36f8afe190065a4bf9a87bf324842c05701330bba9f1cacbb"
 dependencies = [
  "memchr",
 ]
-
-[[package]]
-name = "ryu"
-version = "1.0.23"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9774ba4a74de5f7b1c1451ed6cd5285a32eddb5cccb8cc655a4e50009e06477f"
 
 [[package]]
 name = "syn"

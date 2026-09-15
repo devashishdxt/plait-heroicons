@@ -11,8 +11,8 @@ fn outline_academic_cap_has_correct_svg_attrs() {
     assert!(rendered.contains(r#"viewBox="0 0 24 24""#));
     assert!(rendered.contains(r#"stroke-width="1.5""#));
     assert!(rendered.contains(r#"stroke="currentColor""#));
-    assert!(rendered.contains(r#"aria-hidden="true""#));
-    assert!(rendered.contains(r#"data-slot="icon""#));
+    assert!(!rendered.contains("aria-hidden="));
+    assert!(!rendered.contains("data-slot="));
     assert!(rendered.contains("stroke-linecap"));
     assert!(rendered.contains("stroke-linejoin"));
 }
@@ -26,8 +26,8 @@ fn solid_academic_cap_has_correct_svg_attrs() {
     assert!(rendered.contains(r#"xmlns="http://www.w3.org/2000/svg""#));
     assert!(rendered.contains(r#"viewBox="0 0 24 24""#));
     assert!(rendered.contains(r#"fill="currentColor""#));
-    assert!(rendered.contains(r#"aria-hidden="true""#));
-    assert!(rendered.contains(r#"data-slot="icon""#));
+    assert!(!rendered.contains("aria-hidden="));
+    assert!(!rendered.contains("data-slot="));
     // Solid icons should NOT have stroke attrs
     assert!(!rendered.contains("stroke-width"));
     assert!(!rendered.contains(r#"fill="none""#));

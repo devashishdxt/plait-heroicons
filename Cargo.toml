@@ -12,7 +12,10 @@ categories = ["web-programming"]
 readme = "README.md"
 
 [dependencies]
-plait = "0.8.0"
+plait = { git = "https://github.com/devashishdxt/plait.git", rev = "42e3b39f1f6ddf120d908d0e9a78cab6de419734", default-features = false }
+
+[dev-dependencies]
+roxmltree = "0.21.1"
 
 [build-dependencies]
 roxmltree = "0.21.1"

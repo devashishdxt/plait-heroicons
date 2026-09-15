@@ -46,11 +46,7 @@ fn generate_variant(dir: &str) -> String {
     let mut entries: Vec<_> = fs::read_dir(dir)
         .unwrap_or_else(|e| panic!("Failed to read directory {dir}: {e}"))
         .filter_map(|e| e.ok())
-        .filter(|e| {
-            e.path()
-                .extension()
-                .is_some_and(|ext| ext == "svg")
-        })
+        .filter(|e| e.path().extension().is_some_and(|ext| ext == "svg"))
         .collect();
     entries.sort_by_key(|e| e.file_name());
 
@@ -79,6 +75,12 @@ fn generate_component(name: &str, svg_content: &str) -> String {
     // doesn't expose it as a regular attribute; add it manually.
     let mut svg_attrs = vec!["xmlns: \"http://www.w3.org/2000/svg\"".to_string()];
     for attr in svg_element.attributes() {
+        // Accessibility and integration slots belong to the caller, not the drawing.
+        // Emitting these defaults before #attrs would create duplicate attributes
+        // and prevent meaningful icons from opting out of aria-hidden.
+        if matches!(attr.name(), "aria-hidden" | "data-slot") {
+            continue;
+        }
         let attr_str = format_attribute(attr.name(), attr.value());
         svg_attrs.push(attr_str);
     }
@@ -128,9 +130,7 @@ fn generate_children(parent: &roxmltree::Node) -> String {
 
 fn format_attribute(name: &str, value: &str) -> String {
     // Attributes that need string literal syntax because plait lowercases identifiers
-    let needs_string_literal = name
-        .chars()
-        .any(|c| c.is_ascii_uppercase() || c == '@');
+    let needs_string_literal = name.chars().any(|c| c.is_ascii_uppercase() || c == '@');
 
     if needs_string_literal {
         // Use string literal: "viewBox": "value"
