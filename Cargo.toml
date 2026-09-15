@@ -1,6 +1,6 @@
 [package]
 name = "plait-heroicons"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2024"
 authors = ["Devashish Dixit <devashishdxt@gmail.com>"]
 description = "Heroicons as plait components"
@@ -12,8 +12,8 @@ categories = ["web-programming"]
 readme = "README.md"
 
 [dependencies]
-plait = "0.8.0"
+plait = "0.9"
 
 [build-dependencies]
-roxmltree = "0.21.1"
-convert_case = "0.11.0"
+roxmltree = "0.21"
+convert_case = "0.11"

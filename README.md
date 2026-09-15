@@ -1,6 +1,7 @@
 # plait-heroicons
 
-[Heroicons](https://heroicons.com) as [`plait`](https://crates.io/crates/plait) components.
+[Heroicons](https://heroicons.com) as
+[`plait`](https://crates.io/crates/plait) components.
 
 ## Usage
 
@@ -13,8 +14,8 @@ Icons are organized into four modules, matching the Heroicons styles:
 | [`mini`]    | 20px | Solid   |
 | [`micro`]   | 16px | Solid   |
 
-Each icon is a component function named in PascalCase after the original SVG filename (e.g. `academic-cap.svg`
-becomes `AcademicCap`).
+Each icon is a component function named in PascalCase after the original SVG
+filename (e.g. `academic-cap.svg` becomes `AcademicCap`).
 
 ```rust
 use plait::component;
@@ -57,5 +58,6 @@ at your option.
 
 ## Contribution
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as
-defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.

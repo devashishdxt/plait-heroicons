@@ -1,4 +1,5 @@
-//! [Heroicons](https://heroicons.com) as [`plait`](https://crates.io/crates/plait) components.
+//! [Heroicons](https://heroicons.com) as
+//! [`plait`](https://crates.io/crates/plait) components.
 //!
 //! # Usage
 //!
@@ -11,8 +12,8 @@
 //! | [`mini`]    | 20px | Solid   |
 //! | [`micro`]   | 16px | Solid   |
 //!
-//! Each icon is a component function named in PascalCase after the original SVG filename (e.g. `academic-cap.svg`
-//! becomes `AcademicCap`).
+//! Each icon is a component function named in PascalCase after the original SVG
+//! filename (e.g. `academic-cap.svg` becomes `AcademicCap`).
 //!
 //! ```rust
 //! use plait::component;
