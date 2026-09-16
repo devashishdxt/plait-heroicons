@@ -34,9 +34,9 @@ checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
 
 [[package]]
 name = "plait"
-version = "0.9.0"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "611e725443fb21a3ae8897164c282b8b05107539dc6d2e59021662ebe85061a4"
+checksum = "0263808c859ba6ed34eec751ae5f23879e16b2c03029a5d673ba454c4907fd99"
 dependencies = [
  "itoa",
  "plait-macros",
@@ -45,7 +45,7 @@ dependencies = [
 
 [[package]]
 name = "plait-heroicons"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "convert_case 0.11.0",
  "plait",
@@ -54,9 +54,9 @@ dependencies = [
 
 [[package]]
 name = "plait-macros"
-version = "0.9.0"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71f42cdbc2e2839d81c4fda5941d9f66869cd461b4b43926d93cdabfa434bb09"
+checksum = "7e3cee1082f971ffef34626a9a417fea875b4d7b1fa1401401cc8a568dcea27e"
 dependencies = [
  "convert_case 0.10.0",
  "proc-macro2",
